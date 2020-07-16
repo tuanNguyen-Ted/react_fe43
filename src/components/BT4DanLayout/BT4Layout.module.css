@@ -1,0 +1,31 @@
+.setAll{
+    padding: 0;
+    margin: 0;
+}
+
+.model__img{
+    position: relative;
+    width: 100%;
+}
+
+.model__content{
+    width: 480px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.61);
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    padding: 15px 15px;
+}
+
+.model__glasses{
+    position: absolute;
+    top: 150px;
+    left: 104px;
+    width: 275px;
+}
+
+.cursor{
+    cursor: pointer;
+}

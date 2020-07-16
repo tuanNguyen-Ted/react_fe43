@@ -1,18 +1,29 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import RenderWithMap from './renderwithstate/renderwithmap/RenderWithMap';
+// eslint-disable-next-line
+import BT4DanLayout from './components/BT4DanLayout/BT4DanLayout';
+// eslint-disable-next-line
+import ExampleGlasses from './renderwithstate/ExampleGlasses';
+// eslint-disable-next-line
+import DemoProps from './props/DemoProps';
+import BaiTapLayout from './components/bai_tap_layout/BaiTapLayout';
 
 export default function App() {
   return (
     <div className="App titleDemo">
-     {/* <BT2/> */}
-     {/* <DataBinding/> */}
-     {/* <BT3Layout/> */}
-     {/* <EventBinding/> */}
-     {/* <RenderWithSate/> */}
-    {/* <BaiTapChonXe/> */}
-    <RenderWithMap/>
+      <BaiTapLayout/>
+      {/* <BT2/> */}
+      {/* <DataBinding/> */}
+      {/* <BT3Layout/> */}
+      {/* <EventBinding/> */}
+      {/* <RenderWithSate/> */}
+      {/* <BaiTapChonXe/> */}
+      {/* <RenderWithMap/> */}
+      {/* <BT4DanLayout />
+      <hr/>
+      <ExampleGlasses/> */}
+      {/* <DemoProps/> */}
     </div>
   );
 }

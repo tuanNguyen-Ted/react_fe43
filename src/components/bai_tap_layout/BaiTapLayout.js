@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ProductListComponent from './ProductListComponent'
 
 export default class BaiTapLayout extends Component {
 
@@ -6,7 +7,7 @@ export default class BaiTapLayout extends Component {
     render() {
         return (
             <div>
-                Bài tập layout component
+                <ProductListComponent/>
             </div>
         )
     }
