@@ -7,12 +7,15 @@ import BT4DanLayout from './components/BT4DanLayout/BT4DanLayout';
 import ExampleGlasses from './renderwithstate/ExampleGlasses';
 // eslint-disable-next-line
 import DemoProps from './props/DemoProps';
+// eslint-disable-next-line
 import BaiTapLayout from './components/bai_tap_layout/BaiTapLayout';
+
+import ExampleCard from './LiftingUpSate/ExampleCard';
 
 export default function App() {
   return (
     <div className="App titleDemo">
-      <BaiTapLayout/>
+      {/* <BaiTapLayout/> */}
       {/* <BT2/> */}
       {/* <DataBinding/> */}
       {/* <BT3Layout/> */}
@@ -24,6 +27,8 @@ export default function App() {
       <hr/>
       <ExampleGlasses/> */}
       {/* <DemoProps/> */}
+      <ExampleCard />
+
     </div>
   );
 }
