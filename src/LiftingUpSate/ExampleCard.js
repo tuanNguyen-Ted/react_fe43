@@ -9,10 +9,32 @@ export default class ExampleCard extends Component {
         productSelected: null,
     };
 
+
+    // Tăng giảm số lượng
+    tangGiamSoLuong = (maSP, tangGiam) => {//Tăng là true giảm là false
+        let cardListUpdate = [...this.state.cardList];
+
+        // Tim ra san pham chua maSP = voi maSP nút tăng số lượng click
+        let index = cardListUpdate.findIndex((item) => item.maSP === maSP);
+        if (index !== -1) {
+            if (tangGiam)
+                cardListUpdate[index].soLuong += 1;
+            else {
+                if (cardListUpdate[index].soLuong > 1)
+                    cardListUpdate[index].soLuong -= 1;
+                else
+                    alert("Số lượng tối thiếu 1");
+            }
+        }
+        // setState làm thay đổi số lượng
+        this.setState({ cardList: cardListUpdate })
+    }
+
+
     handleDeleteCardProduct = (card) => {
         //1. Tìm vị trí
         let cardListUpdate = [...this.state.cardList]
-        let index = cardListUpdate.findIndex((item) => item.maSP == card.maSP)
+        let index = cardListUpdate.findIndex((item) => item.maSP === card.maSP)
         if (index >= 0) {
             //2. Cắt ra khỏi mãng
             cardListUpdate.splice(index, 1);
@@ -50,7 +72,7 @@ export default class ExampleCard extends Component {
         return (
             <div>
                 <div className="container">
-                    <Card cardList={this.state.cardList} handleDeleteCardProduct={this.handleDeleteCardProduct} />
+                    <Card tangGiamSoLuong={this.tangGiamSoLuong} cardList={this.state.cardList} handleDeleteCardProduct={this.handleDeleteCardProduct} />
                     <ProductList
                         productList={this.state.productList}
                         handleSelectProduct={this.handleSelectProduct}

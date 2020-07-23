@@ -11,18 +11,28 @@ export default class Card extends Component {
                     <img src={item.hinhAnh} alt="asda" style={{ width: 100 }} />
                 </td>
                 <td>{item.tenSP}</td>
-                <td>{item.giaBan}$</td>
+                <td>{item.giaBan.toLocaleString()}$</td>
                 <td>
-                    <button className="btn btn-info">-</button><span className="mx-2">{item.soLuong}</span><button className="btn btn-info">+</button>
+                    <button className="btn btn-info" onClick={() => {
+                        this.props.tangGiamSoLuong(item.maSP, false)
+                    }}
+                    >-</button><span className="mx-2">{item.soLuong}</span>
+                    <button className="btn btn-info" onClick={() => {
+                        this.props.tangGiamSoLuong(item.maSP, true)
+                    }}>+</button>
                 </td>
-                <td>{item.giaBan * item.soLuong}$</td>
+                <td>{(item.giaBan * item.soLuong).toLocaleString()}$</td>
                 <td><button className="btn btn-danger" onClick={() => {
                     this.props.handleDeleteCardProduct(item);
                 }}>xóa</button></td>
             </tr>);
         })
     }
-
+    tinhTongTien = () => {
+        return this.props.cardList.reduce((tongTien, item, index) => {
+            return tongTien += item.soLuong * item.giaBan;
+        }, 0).toLocaleString();
+    }
     render() {
         return (
             <div>
@@ -43,6 +53,9 @@ export default class Card extends Component {
                         {this.renderCardList()}
                     </tbody>
                     <tfoot>
+                        <td colSpan="5"></td>
+                        <td>Tổng tiền</td>
+                        <td>{this.tinhTongTien()}$</td>
                     </tfoot>
                 </table>
             </div>
