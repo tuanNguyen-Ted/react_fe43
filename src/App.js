@@ -11,8 +11,10 @@ import DemoProps from './props/DemoProps';
 import BaiTapLayout from './components/bai_tap_layout/BaiTapLayout';
 // eslint-disable-next-line
 import ExampleCard from './LiftingUpSate/ExampleCard';
-
+// eslint-disable-next-line
 import BaiTapGioHang from './bai_tap_redux/bai_tap_gio_hang/BaiTapGioHang';
+
+import GameBauCua from './game_bau_cua';
 
 export default function App() {
   return (
@@ -30,8 +32,8 @@ export default function App() {
       <ExampleGlasses/> */}
       {/* <DemoProps/> */}
       {/* <ExampleCard /> */}
-      <BaiTapGioHang />
-
+      {/* <BaiTapGioHang /> */}
+      <GameBauCua />
     </div>
   );
 }
